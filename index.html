@@ -25,18 +25,22 @@
         <nav class="nav" id="mobile-nav">
             <!--Logo-->
             <div class="logo">
-                <img src="img/logo.png" width="200px" alt="ANNA GARCIA - CORRETORA">
+                <img src="img/logo.png" width="200px" alt="ANA GARCIA - CORRETORA">
             </div>
             <!--Menu Hamburger-->
-    <button class="hamburger"></button>
-    <!-- Navegação -->
-    <div>
-        <ul class="menu-links">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </div>
+            <div class="hamburger-menu">
+                <!--Icone-->
+                <div class="hamburger-icon" onclick="toggleMenu()"> <!--Chama a função do JavaScript-->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                        <li><a href="#about" onclick="toggleMenu()">Início</a></li>
+                        <li><a href="#experience" onclick="toggleMenu()">Sobre</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contato</a></li>
+                </div>
+            </div>
         </nav>
     </header>
 
