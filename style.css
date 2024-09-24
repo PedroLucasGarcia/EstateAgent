@@ -44,50 +44,80 @@ a:hover{
 /*Navegação hamburger para smartphones*/
 #mobile-nav{
     display: none;
-    padding: 0 30px;
 }
 /*Menu Hamburger*/
-.hamburger{
-    border: none;
-    background: none;
-    border-top: 2px solid #C9BDAB;
+.hamburger-menu{
+    position: relative;
+    display: inline-block;
+}
+/*Icone*/
+.hamburger-icon{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 24px;
+    width: 30px;
     cursor: pointer;
 }
-.hamburger::before, .hamburger::after{
-    content: " ";
-    display: block;
-    width: 30px;
+.hamburger-icon span{
+    width: 100%;
     height: 2px;
-    background: #C9BDAB;
-    margin-top: 5px;
+    background-color: #C9BDAB;
+    transition: 0.3s;
 }
-
 /*Navegação Hamburguer*/
 .menu-links{
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 15vh;
+    right: 0;
     width: 100vw;
-    height: 100vh;
-    background: white;
-    clip-path: circle(100px at 90% -15%);
-    transition: 1s ease-in-out;
-    
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0;
-    pointer-events: none;
+    max-height: 0;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid #303719;
+}
+.menu-links a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #303719;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+.menu-links a:hover{
+    background-color: #303719;
+    color: #C9BDAB;
+    text-decoration: underline;
+    text-underline-offset: .5rem;
 }
 .menu-links li{
     list-style: none;
 }
-.nav.active .menu-links{
-    clip-path: circle(1500px at 90% -15%);
-    pointer-events: all;
+
+/*Animação do icone Hamburguer*/
+.menu-links.open{
+    max-height: 300px;
 }
-
-
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px, 5px);
+}
+.hamburger-icon.open span:nth-child(2){
+    opacity: 0;
+}
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+.hamburger-icon span:first-child{
+    transform: none;
+}
+.hamburger-icon span:first-child{
+    opacity: 1;
+}
+.hamburger-icon span:first-child{
+    transform: none;
+}
 /*--------------------------------------*/
 @media screen and (max-width: 750px) {
     #desktop-nav{
@@ -96,9 +126,12 @@ a:hover{
     #mobile-nav{
         display: flex;
     }
+    .nav{
+        padding: 0 40px;
+    }
 }
 @media screen and (max-height: 500px) {
-    nav{
+    .nav{
         height: 26vh;
     }
 }
