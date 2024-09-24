@@ -1,4 +1,7 @@
-const hamburger = document.querySelector(".hamburger");
-const nav = document.querySelector(".nav");
+function toggleMenu(){
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
 
-hamburger.addEventListener("click", () => nav.classList.toggle(active));
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+}
